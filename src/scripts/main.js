@@ -1,0 +1,1 @@
+console.log("The will is the weapon")
