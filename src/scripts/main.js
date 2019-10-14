@@ -74,22 +74,20 @@ const students = [
 ]
 let studentClass
 
-const createStudentComponent = (name, subject, info, score) => {    
-    if (score >= 60) {
+const createStudentComponent = (student) => {    
+    if (student.score >= 60) {
         studentClass = "passing"
     } else {
         studentClass = "failing"
     }
     return `
     <div class="student">
-        <h1 class="xx-large ${studentClass}">${name}</h1>
-        <section class="bordered dashed section--padded">${subject}</section>
-        <aside class="pushRight">${info}</aside>
+        <h1 class="xx-large ${studentClass}">${student.name}</h1>
+        <section class="bordered dashed section--padded">${student.subject}</section>
+        <aside class="pushRight">${student.info}</aside>
     </div>
 `
 }
-
-
 
 // studentContainer.innerHTML = createStudentComponent()
 
@@ -97,11 +95,12 @@ const createStudentComponent = (name, subject, info, score) => {
 //     const singleStudentHTML = createStudentComponent(students[i].name, students[i].subject, students[i].info, students[i].score)
 //     studentHTML += singleStudentHTML
 // }
+
 let studentHTML = ""
 const singleStudentHTML = ""
 
 for (let i = 0; i < students.length; i++) {
-    studentHTML += createStudentComponent(students[i].name, students[i].subject, students[i].info, students[i].score)
+    studentHTML += createStudentComponent(students[i])
 }
 
 
