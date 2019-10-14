@@ -89,14 +89,21 @@ const createStudentComponent = (name, subject, info, score) => {
 `
 }
 
-let studentHTML = ""
+
 
 // studentContainer.innerHTML = createStudentComponent()
 
+// for (let i = 0; i < students.length; i++) {
+//     const singleStudentHTML = createStudentComponent(students[i].name, students[i].subject, students[i].info, students[i].score)
+//     studentHTML += singleStudentHTML
+// }
+let studentHTML = ""
+const singleStudentHTML = ""
+
 for (let i = 0; i < students.length; i++) {
-    const singleStudentHTML = createStudentComponent(students[i].name, students[i].subject, students[i].info, students[i].score)
-    studentHTML += singleStudentHTML
+    studentHTML += createStudentComponent(students[i].name, students[i].subject, students[i].info, students[i].score)
 }
+
 
 const studentContainer = document.querySelector("#container")
 studentContainer.innerHTML = studentHTML
